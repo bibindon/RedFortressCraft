@@ -16,7 +16,7 @@
 #include <string>
 #include <tchar.h>
 
-using namespace NSCraftLib;
+using namespace NSCraft;
 
 #define SAFE_RELEASE(p) { if (p) { (p)->Release(); (p) = NULL; } }
 

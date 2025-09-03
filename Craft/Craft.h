@@ -3,7 +3,7 @@
 #include <vector>
 #include <unordered_map>
 
-namespace NSCraftLib
+namespace NSCraft
 {
 class ISprite
 {

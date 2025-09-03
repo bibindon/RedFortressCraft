@@ -2,7 +2,7 @@
 #include <sstream>
 #include <tchar.h>
 
-using namespace NSCraftLib;
+using namespace NSCraft;
 
 static std::vector<std::wstring> split(const std::wstring& s, wchar_t delim)
 {
@@ -38,7 +38,7 @@ void CraftLib::Init(IFont* font,
     m_SE->Init();
 }
 
-void NSCraftLib::CraftLib::Finalize()
+void NSCraft::CraftLib::Finalize()
 {
     delete m_sprPanelTop;
     delete m_sprPanelLeft;
@@ -53,19 +53,19 @@ void NSCraftLib::CraftLib::Finalize()
     }
 }
 
-void NSCraftLib::CraftLib::SetOutputList(const std::vector<std::wstring>& idList,
+void NSCraft::CraftLib::SetOutputList(const std::vector<std::wstring>& idList,
                                          const std::vector<std::wstring>& nameList)
 {
     m_outputIdList = idList;
     m_outputNameList = nameList;
 }
 
-void NSCraftLib::CraftLib::SetOutputInfo(const std::wstring& key, const std::wstring& value)
+void NSCraft::CraftLib::SetOutputInfo(const std::wstring& key, const std::wstring& value)
 {
     m_outputInfoMap[key] = value;
 }
 
-void NSCraftLib::CraftLib::SetOutputImage(const std::wstring& key,
+void NSCraft::CraftLib::SetOutputImage(const std::wstring& key,
                                           const std::wstring& imagePath,
                                           ISprite* sprite)
 {
@@ -76,13 +76,13 @@ void NSCraftLib::CraftLib::SetOutputImage(const std::wstring& key,
     }
 }
 
-void NSCraftLib::CraftLib::SetCraftingItem(const std::wstring& name, const int progress)
+void NSCraft::CraftLib::SetCraftingItem(const std::wstring& name, const int progress)
 {
     m_craftingItem = name;
     m_progress = progress;
 }
 
-void NSCraftLib::CraftLib::SetCraftQue(const std::vector<std::wstring>& craftQue)
+void NSCraft::CraftLib::SetCraftQue(const std::vector<std::wstring>& craftQue)
 {
     m_craftQue = craftQue;
 }
@@ -197,7 +197,7 @@ std::wstring CraftLib::Back()
     return result;
 }
 
-void NSCraftLib::CraftLib::Next()
+void NSCraft::CraftLib::Next()
 {
     if (m_eFocus == eFocus::OUTPUT)
     {
@@ -220,7 +220,7 @@ void NSCraftLib::CraftLib::Next()
     }
 }
 
-void NSCraftLib::CraftLib::Previous()
+void NSCraft::CraftLib::Previous()
 {
     if (m_eFocus == eFocus::OUTPUT)
     {
