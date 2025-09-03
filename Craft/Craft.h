@@ -31,7 +31,7 @@ public:
     virtual ~ISoundEffect() {};
 };
 
-class CraftLib
+class Craft
 {
 public:
 

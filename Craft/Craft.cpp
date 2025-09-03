@@ -18,7 +18,7 @@ static std::vector<std::wstring> split(const std::wstring& s, wchar_t delim)
     return result;
 }
 
-void CraftLib::Init(IFont* font,
+void Craft::Init(IFont* font,
                     ISoundEffect* SE,
                     ISprite* sprCursor,
                     ISprite* sprBackground,
@@ -38,7 +38,7 @@ void CraftLib::Init(IFont* font,
     m_SE->Init();
 }
 
-void NSCraft::CraftLib::Finalize()
+void NSCraft::Craft::Finalize()
 {
     delete m_sprPanelTop;
     delete m_sprPanelLeft;
@@ -53,19 +53,19 @@ void NSCraft::CraftLib::Finalize()
     }
 }
 
-void NSCraft::CraftLib::SetOutputList(const std::vector<std::wstring>& idList,
+void NSCraft::Craft::SetOutputList(const std::vector<std::wstring>& idList,
                                          const std::vector<std::wstring>& nameList)
 {
     m_outputIdList = idList;
     m_outputNameList = nameList;
 }
 
-void NSCraft::CraftLib::SetOutputInfo(const std::wstring& key, const std::wstring& value)
+void NSCraft::Craft::SetOutputInfo(const std::wstring& key, const std::wstring& value)
 {
     m_outputInfoMap[key] = value;
 }
 
-void NSCraft::CraftLib::SetOutputImage(const std::wstring& key,
+void NSCraft::Craft::SetOutputImage(const std::wstring& key,
                                           const std::wstring& imagePath,
                                           ISprite* sprite)
 {
@@ -76,18 +76,18 @@ void NSCraft::CraftLib::SetOutputImage(const std::wstring& key,
     }
 }
 
-void NSCraft::CraftLib::SetCraftingItem(const std::wstring& name, const int progress)
+void NSCraft::Craft::SetCraftingItem(const std::wstring& name, const int progress)
 {
     m_craftingItem = name;
     m_progress = progress;
 }
 
-void NSCraft::CraftLib::SetCraftQue(const std::vector<std::wstring>& craftQue)
+void NSCraft::Craft::SetCraftQue(const std::vector<std::wstring>& craftQue)
 {
     m_craftQue = craftQue;
 }
 
-void CraftLib::Up()
+void Craft::Up()
 {
     if (m_eFocus == eFocus::OUTPUT)
     {
@@ -110,7 +110,7 @@ void CraftLib::Up()
     }
 }
 
-void CraftLib::Down()
+void Craft::Down()
 {
     if (m_eFocus == eFocus::OUTPUT)
     {
@@ -133,7 +133,7 @@ void CraftLib::Down()
     }
 }
 
-void CraftLib::Right()
+void Craft::Right()
 {
     if (m_eFocus == eFocus::CONFIRM)
     {
@@ -145,7 +145,7 @@ void CraftLib::Right()
     }
 }
 
-void CraftLib::Left()
+void Craft::Left()
 {
     if (m_eFocus == eFocus::CONFIRM)
     {
@@ -157,7 +157,7 @@ void CraftLib::Left()
     }
 }
 
-std::wstring CraftLib::Into()
+std::wstring Craft::Into()
 {
     std::wstring result;
     if (m_eFocus == eFocus::OUTPUT)
@@ -181,7 +181,7 @@ std::wstring CraftLib::Into()
     return result;
 }
 
-std::wstring CraftLib::Back()
+std::wstring Craft::Back()
 {
     std::wstring result;
     if (m_eFocus == eFocus::OUTPUT)
@@ -197,7 +197,7 @@ std::wstring CraftLib::Back()
     return result;
 }
 
-void NSCraft::CraftLib::Next()
+void NSCraft::Craft::Next()
 {
     if (m_eFocus == eFocus::OUTPUT)
     {
@@ -220,7 +220,7 @@ void NSCraft::CraftLib::Next()
     }
 }
 
-void NSCraft::CraftLib::Previous()
+void NSCraft::Craft::Previous()
 {
     if (m_eFocus == eFocus::OUTPUT)
     {
@@ -243,7 +243,7 @@ void NSCraft::CraftLib::Previous()
     }
 }
 
-void CraftLib::CursorOn(const int x, const int y)
+void Craft::CursorOn(const int x, const int y)
 {
     if (m_eFocus == eFocus::OUTPUT)
     {
@@ -467,7 +467,7 @@ void CraftLib::CursorOn(const int x, const int y)
     }
 }
 
-std::wstring CraftLib::Click(const int x, const int y)
+std::wstring Craft::Click(const int x, const int y)
 {
     std::wstring result;
     m_SE->PlayClick();
@@ -613,7 +613,7 @@ std::wstring CraftLib::Click(const int x, const int y)
     return result;
 }
 
-void CraftLib::Draw()
+void Craft::Draw()
 {
     // 背景
     m_sprBackground->DrawImage(0, 0);

@@ -183,7 +183,7 @@ D3DXMATERIAL* d3dxMaterials = NULL;
 float f = 0.0f;
 bool bShowMenu = true;
 
-CraftLib menu;
+Craft menu;
 
 void TextDraw(LPD3DXFONT pFont, wchar_t* text, int X, int Y)
 {
