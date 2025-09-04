@@ -822,7 +822,23 @@ void Craft::Draw()
     {
         m_sprCursor->DrawImage(610 + (m_confirmCursor * 210), 217 + (m_leftCursor * 60));
     }
+}
 
+void NSCraft::Craft::OnDeviceLost()
+{
+    m_sprBackground->OnDeviceLost();
+    m_sprCursor->OnDeviceLost();
+    m_sprPanelLeft->OnDeviceLost();
+    m_sprPanelTop->OnDeviceLost();
+    m_font->OnDeviceLost();
+}
 
+void NSCraft::Craft::OnDeviceReset()
+{
+    m_sprBackground->OnDeviceReset();
+    m_sprCursor->OnDeviceReset();
+    m_sprPanelLeft->OnDeviceReset();
+    m_sprPanelTop->OnDeviceReset();
+    m_font->OnDeviceReset();
 }
 

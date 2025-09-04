@@ -11,6 +11,8 @@ public:
     virtual void DrawImage(const int x, const int y, const int transparency = 255) = 0;
     virtual void Load(const std::wstring& filepath) = 0;
     virtual ~ISprite() {};
+    virtual void OnDeviceLost() = 0;
+    virtual void OnDeviceReset() = 0;
 };
 
 class IFont
@@ -19,6 +21,8 @@ public:
     virtual void DrawText_(const std::wstring& msg, const int x, const int y) = 0;
     virtual void Init(const bool bEnglish) = 0;
     virtual ~IFont() {};
+    virtual void OnDeviceLost() = 0;
+    virtual void OnDeviceReset() = 0;
 };
 
 class ISoundEffect
@@ -66,6 +70,9 @@ public:
     void CursorOn(const int x, const int y);
     std::wstring Click(const int x, const int y);
     void Draw();
+
+    void OnDeviceLost();
+    void OnDeviceReset();
     
 private:
 
